@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+
 :root{
   --gold:#d4a853;--gold2:#f5c842;--gold-dim:rgba(212,168,83,0.15);
   --bg:#04040a;
@@ -20,7 +21,6 @@
 .font-oswald{font-family:'Oswald',sans-serif;}
 html,body{background:var(--bg);color:#fff;overflow-x:hidden;min-height:100vh;}
 
-/* ── AMBIENT BACKGROUND ── */
 #ambient-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 #ambient-bg::before{content:'';position:absolute;inset:0;background:
   radial-gradient(ellipse 80% 60% at 10% 90%,rgba(212,168,83,0.12) 0%,transparent 55%),
@@ -32,33 +32,27 @@ html,body{background:var(--bg);color:#fff;overflow-x:hidden;min-height:100vh;}
   background-size:72px 72px;animation:gridDrift 50s linear infinite;}
 @keyframes gridDrift{0%{transform:translate(0,0)}100%{transform:translate(72px,72px)}}
 
-/* ── PARTICLES ── */
 #particles-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.8;}
 
-/* ── BASE ── */
 .gold-text{color:var(--gold);}
 .dark-card{background:rgba(8,8,14,0.99);border:1px solid rgba(212,168,83,0.18);backdrop-filter:blur(24px);box-shadow:0 12px 50px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.04);}
 .fade-in{animation:fadeIn 0.6s cubic-bezier(0.16,1,0.3,1) both;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── NAV ── */
 nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bottom:1px solid rgba(212,168,83,0.14);position:fixed;top:0;width:100%;z-index:40;box-shadow:0 2px 40px rgba(0,0,0,0.7);}
 .nav-btn{transition:all 0.22s;border:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.5);}
 .nav-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,168,83,0.09);}
 .nav-btn.active{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;border-color:transparent;font-weight:700;box-shadow:0 4px 20px rgba(212,168,83,0.45);}
 
-/* ── CLOCK — HUGE ── */
 .kiosk-clock{font-family:'Oswald',sans-serif;font-size:clamp(5rem,10vw,10rem);font-weight:200;letter-spacing:0.03em;line-height:1;color:#fff;text-shadow:0 0 80px rgba(212,168,83,0.4),0 2px 20px rgba(0,0,0,0.5);}
 .kiosk-date{font-size:clamp(0.85rem,1.4vw,1.15rem);letter-spacing:0.42em;color:rgba(212,168,83,0.75);text-transform:uppercase;margin-top:12px;font-weight:700;}
 
-/* ── STAT BUBBLES — LARGE ── */
 .stat-bubble{background:rgba(8,8,14,0.96);border:1px solid rgba(212,168,83,0.18);border-radius:22px;padding:24px 32px;text-align:center;transition:all 0.35s;position:relative;overflow:hidden;}
 .stat-bubble::before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(212,168,83,0.08),transparent 55%);pointer-events:none;}
 .stat-bubble::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,83,0.5),transparent);}
 .stat-bubble:hover{border-color:rgba(212,168,83,0.5);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(212,168,83,0.12);}
 .stat-num{font-family:'Oswald',sans-serif;line-height:1;transition:all 0.4s;}
 
-/* ── RFID RINGS — FULL SIZE ── */
 .rfid-ring-wrap{position:relative;display:flex;align-items:center;justify-content:center;}
 .rfid-outer{width:160px;height:160px;border-radius:50%;border:2.5px solid rgba(212,168,83,0.28);display:flex;align-items:center;justify-content:center;position:relative;animation:breathe 3s ease-in-out infinite;}
 @keyframes breathe{0%,100%{transform:scale(1);border-color:rgba(212,168,83,0.25);}50%{transform:scale(1.07);border-color:rgba(212,168,83,0.7);box-shadow:0 0 50px rgba(212,168,83,0.15);}}
@@ -69,24 +63,20 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 @keyframes ripple{0%{transform:scale(1);opacity:0.6;}100%{transform:scale(2.8);opacity:0;}}
 .rfid-inner{width:116px;height:116px;border-radius:50%;background:linear-gradient(145deg,rgba(212,168,83,0.12),rgba(212,168,83,0.04));border:2px solid rgba(212,168,83,0.38);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(212,168,83,0.12),inset 0 0 30px rgba(212,168,83,0.06);}
 
-/* ── CHECKIN CARD ── */
 .checkin-card{transition:all 0.35s cubic-bezier(0.16,1,0.3,1);border:1px solid rgba(212,168,83,0.2);cursor:pointer;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
 .checkin-card::before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(212,168,83,0.09) 0%,transparent 55%);opacity:0;transition:opacity 0.3s;pointer-events:none;}
 .checkin-card:hover::before{opacity:1;}
 .checkin-card:hover{border-color:rgba(212,168,83,0.65);box-shadow:0 0 80px rgba(212,168,83,0.22),0 16px 50px rgba(0,0,0,0.5);}
 .checkin-card:active{transform:scale(0.99);}
 
-/* ── SCAN LINE ── */
 .scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:scanMove 2.5s ease-in-out infinite;opacity:0.55;}
 @keyframes scanMove{0%{top:0;opacity:0;}8%{opacity:0.9;}92%{opacity:0.9;}100%{top:100%;opacity:0;}}
 
-/* ── CORNER BRACKETS ── */
 .corner-tl{position:absolute;top:18px;left:18px;width:30px;height:30px;border-top:2.5px solid rgba(212,168,83,0.6);border-left:2.5px solid rgba(212,168,83,0.6);}
 .corner-tr{position:absolute;top:18px;right:18px;width:30px;height:30px;border-top:2.5px solid rgba(212,168,83,0.6);border-right:2.5px solid rgba(212,168,83,0.6);}
 .corner-bl{position:absolute;bottom:18px;left:18px;width:30px;height:30px;border-bottom:2.5px solid rgba(212,168,83,0.6);border-left:2.5px solid rgba(212,168,83,0.6);}
 .corner-br{position:absolute;bottom:18px;right:18px;width:30px;height:30px;border-bottom:2.5px solid rgba(212,168,83,0.6);border-right:2.5px solid rgba(212,168,83,0.6);}
 
-/* ── LOGO ── */
 .logo-container{position:relative;display:inline-flex;align-items:center;justify-content:center;}
 .logo-halo{position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,83,0.22) 0%,transparent 65%);animation:haloBreath 3.5s ease-in-out infinite;}
 @keyframes haloBreath{0%,100%{transform:scale(0.87);opacity:0.5;}50%{transform:scale(1.13);opacity:1;}}
@@ -94,19 +84,16 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 @keyframes logoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
 .logo-hex::before{content:'';position:absolute;inset:1px;border-radius:26px;background:linear-gradient(145deg,rgba(212,168,83,0.09),transparent);}
 
-/* ── TITLE ── */
 .title-welcome{font-size:clamp(0.85rem,1.4vw,1.1rem);letter-spacing:0.55em;color:rgba(255,255,255,0.3);text-transform:uppercase;font-weight:700;animation:titleSlideIn 0.9s 0.3s cubic-bezier(0.16,1,0.3,1) both;}
 .title-main{font-family:'Oswald',sans-serif;font-size:clamp(3rem,5.5vw,6rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;line-height:1;animation:titleSlideIn 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) both;background:linear-gradient(140deg,var(--gold2) 0%,var(--gold) 45%,#c49030 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 @keyframes titleSlideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── INPUT — LARGE ── */
 .input-dark{background:rgba(12,12,20,0.95);border:1.5px solid rgba(212,168,83,0.25);color:white;transition:all 0.3s;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1.1rem;}
 .input-dark:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,168,83,0.12),0 0 30px rgba(212,168,83,0.18);}
 .input-dark::placeholder{color:rgba(255,255,255,0.22);}
 .input-dark.valid{border-color:rgba(34,197,94,0.6);}
 .input-dark.invalid{border-color:rgba(239,68,68,0.6);}
 
-/* ── BUTTON — LARGE ── */
 .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;font-weight:800;transition:all 0.3s;position:relative;overflow:hidden;font-family:'Oswald',sans-serif;letter-spacing:0.12em;}
 .btn-gold::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.3),transparent 60%);opacity:0;transition:opacity 0.3s;}
 .btn-gold:hover::before{opacity:1;}
@@ -114,23 +101,19 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 .btn-gold:active{transform:scale(0.98);}
 .btn-gold:disabled{opacity:0.35;cursor:not-allowed;transform:none;box-shadow:none;}
 
-/* ── TICKER ── */
 .ticker-wrap{overflow:hidden;background:rgba(212,168,83,0.04);border-top:1px solid rgba(212,168,83,0.12);border-bottom:1px solid rgba(212,168,83,0.06);}
 .ticker-track{display:flex;animation:ticker 32s linear infinite;}
 .ticker-track:hover{animation-play-state:paused;}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:8px 28px;white-space:nowrap;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.05);}
 
-/* ── MODAL ── */
 .modal-enter{animation:modalPop 0.38s cubic-bezier(0.16,1,0.3,1);}
 @keyframes modalPop{from{opacity:0;transform:scale(0.91) translateY(14px)}to{opacity:1;transform:scale(1) translateY(0)}}
 .modal-member-photo{width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:0 auto 18px;display:block;box-shadow:0 0 30px rgba(212,168,83,0.3);}
 
-/* ── NOTIF ── */
 .notif{animation:slideR 0.35s cubic-bezier(0.16,1,0.3,1);}
 @keyframes slideR{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
 
-/* ── MISC ── */
 .gold-glow{filter:drop-shadow(0 0 22px rgba(212,168,83,0.6));}
 .logo-glow{filter:drop-shadow(0 0 28px rgba(212,168,83,0.65));}
 ::-webkit-scrollbar{width:5px;}
@@ -168,7 +151,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 .tab-pill.active{background:var(--gold);color:#000;border-color:var(--gold);}
 .att-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;}
 
-/* ── CHECK-IN SUCCESS BURST ── */
 @keyframes checkInBurst{0%{box-shadow:0 0 0 0 rgba(34,197,94,0.9);}100%{box-shadow:0 0 0 90px rgba(34,197,94,0);}}
 .checkin-burst{animation:checkInBurst 0.75s ease-out;}
 </style>
@@ -176,11 +158,9 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 </head>
 <body class="min-h-screen">
 
-<!-- Ambient background -->
 <div id="ambient-bg"><div class="grid-lines"></div></div>
 <canvas id="particles-canvas"></canvas>
 
-<!-- TOP NAV -->
 <nav class="kiosk-nav">
   <div class="max-w-7xl mx-auto px-6 sm:px-10">
     <div class="flex items-center justify-between h-16">
@@ -202,20 +182,17 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
   </div>
 </nav>
 
-<!-- KIOSK MAIN CONTENT -->
 <main id="kiosk-main" class="flex-1 pt-16 flex flex-col items-center justify-start min-h-screen">
 
-  <!-- HOME -->
   <section id="home-section" class="w-full min-h-screen flex flex-col fade-in" style="position:relative;z-index:1;">
 
-    <!-- ── TOP BAR: Clock + Stats ── -->
     <div class="w-full flex items-center justify-between px-8 sm:px-14 py-6 border-b border-white/5" style="background:rgba(4,4,10,0.5);">
-      <!-- BIG Clock -->
+      
       <div>
         <p class="kiosk-clock" id="kiosk-clock-time">00:00</p>
         <p class="kiosk-date" id="kiosk-clock-date">Loading...</p>
       </div>
-      <!-- Stats (desktop) -->
+      
       <div class="hidden md:flex items-center gap-5">
         <div class="stat-bubble">
           <p class="stat-num text-5xl font-bold text-white font-oswald" id="quick-total">0</p>
@@ -232,13 +209,10 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
       </div>
     </div>
 
-    <!-- ── MAIN AREA ── -->
     <div class="flex-1 flex items-center justify-center px-6 py-8 gap-10 xl:gap-16" style="position:relative;z-index:1;">
 
-      <!-- LEFT COLUMN: Logo + Check-in + Register -->
       <div class="flex flex-col items-center gap-7 w-full max-w-lg flex-shrink-0" style="animation:titleSlideIn 0.9s 0.1s cubic-bezier(0.16,1,0.3,1) both;">
 
-        <!-- Logo + Branding -->
         <div class="text-center">
           <div class="logo-container mx-auto mb-5">
             <div class="logo-halo"></div>
@@ -253,14 +227,13 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
           <p class="text-sm text-gray-600 tracking-[0.3em] uppercase font-bold mt-2">Your Fitness Journey Starts Here</p>
         </div>
 
-        <!-- ── RFID CHECK-IN CARD ── -->
         <div class="w-full checkin-card rounded-3xl bg-[rgba(8,8,14,0.99)] px-10 py-10 relative overflow-hidden" onclick="focusRFID()">
           <div class="scan-line"></div>
           <div class="corner-tl"></div><div class="corner-tr"></div>
           <div class="corner-bl"></div><div class="corner-br"></div>
 
           <div class="flex flex-col items-center gap-8">
-            <!-- Full-size RFID rings — NO scale hack -->
+            
             <div class="rfid-ring-wrap" style="padding:20px 0;">
               <div class="rfid-ring-1"></div>
               <div class="rfid-ring-2"></div>
@@ -291,7 +264,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
           </div>
         </div>
 
-        <!-- Register strip -->
         <div class="w-full checkin-card rounded-2xl bg-[rgba(8,8,14,0.99)] px-7 py-5 flex items-center gap-5 cursor-pointer" onclick="showQRModal()">
           <div class="w-14 h-14 rounded-2xl bg-yellow-600/10 border border-yellow-600/25 flex items-center justify-center flex-shrink-0" style="box-shadow:0 0 20px rgba(212,168,83,0.08)">
             <i class="fas fa-qrcode text-yellow-500 text-2xl"></i>
@@ -303,7 +275,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
           <i class="fas fa-chevron-right text-gray-500 text-lg ml-auto flex-shrink-0"></i>
         </div>
 
-        <!-- Mobile stats -->
         <div class="grid grid-cols-3 gap-3 w-full md:hidden">
           <div class="stat-bubble py-4"><p class="stat-num text-3xl font-bold text-white font-oswald" id="quick-total-m">0</p><p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1.5 font-bold">Members</p></div>
           <div class="stat-bubble py-4"><p class="stat-num text-3xl font-bold text-green-400 font-oswald" id="quick-today-m">0</p><p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1.5 font-bold">Checked In</p></div>
@@ -311,7 +282,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: Today's Check-ins panel -->
       <div class="hidden lg:flex flex-col flex-shrink-0" style="width:340px;animation:titleSlideIn 0.9s 0.3s cubic-bezier(0.16,1,0.3,1) both;max-height:calc(100vh - 200px);">
         <div class="dark-card rounded-3xl overflow-hidden flex flex-col h-full">
           <div class="flex items-center justify-between px-6 py-5 border-b border-white/6 flex-shrink-0" style="background:rgba(212,168,83,0.03);">
@@ -334,7 +304,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
     </div>
   </section>
 
-  <!-- MEMBERS -->
   <section id="members-section" class="hidden w-full max-w-5xl mx-auto px-4 pt-10 pb-10 fade-in">
     <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
       <div><h2 class="font-oswald text-3xl gold-text uppercase tracking-wider">Members</h2><p class="text-gray-400 text-sm mt-0.5" id="members-count"></p></div>
@@ -358,7 +327,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
     </div>
   </section>
 
-<!-- QR CODE MODAL -->
 <div id="qr-modal" class="hidden fixed inset-0 bg-black/92 backdrop-blur-md z-50 flex items-center justify-center p-4">
   <div class="dark-card rounded-2xl p-7 max-w-sm w-full modal-enter border border-yellow-600/25 text-center">
     <button onclick="closeQRModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/8 flex items-center justify-center text-gray-400 hover:text-white"><i class="fas fa-times text-sm"></i></button>
@@ -369,7 +337,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
     <h3 class="font-oswald text-2xl uppercase tracking-wider text-white mb-1">New Member?</h3>
     <p class="text-gray-400 text-sm mb-5">Scan the QR code with your phone to fill out the registration form.</p>
 
-    <!-- QR code box -->
     <div class="bg-white rounded-2xl p-4 mx-auto inline-block mb-4" style="line-height:0;">
       <div id="qr-canvas-wrap"></div>
     </div>
@@ -389,7 +356,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 
 </main>
 
-<!-- Check-in Modal -->
 <div id="member-modal" class="hidden fixed inset-0 bg-black/92 backdrop-blur-md z-50 flex items-center justify-center p-4">
   <div class="dark-card rounded-3xl p-8 max-w-md w-full modal-enter" style="border:1px solid rgba(212,168,83,0.25);box-shadow:0 25px 60px rgba(0,0,0,0.7),0 0 0 1px rgba(212,168,83,0.1);">
     <div class="text-center mb-6">
@@ -409,7 +375,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
   </div>
 </div>
 
-<!-- Edit Modal -->
 <div id="edit-modal" class="hidden fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
   <div class="dark-card rounded-2xl p-6 max-w-md w-full modal-enter border border-yellow-600/30 max-h-[90vh] overflow-y-auto">
     <div class="flex items-center justify-between mb-6"><h3 class="font-oswald text-xl gold-text uppercase tracking-wider">Edit Member</h3><button onclick="closeEditModal()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button></div>
@@ -425,7 +390,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
   </div>
 </div>
 
-<!-- Delete Modal -->
 <div id="delete-modal" class="hidden fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
   <div class="dark-card rounded-2xl p-8 max-w-sm w-full modal-enter border border-red-500/30 text-center">
     <i class="fas fa-trash-alt text-red-500 text-4xl mb-4 block"></i>
@@ -435,7 +399,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
   </div>
 </div>
 
-<!-- Camera Modal -->
 <div id="camera-modal" class="hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
   <div class="dark-card rounded-2xl p-6 w-full max-w-md border border-yellow-600/30">
     <div class="flex items-center justify-between mb-5"><h3 class="font-oswald text-xl gold-text uppercase tracking-wider">Capture Photo</h3><button onclick="closeCamera()" class="text-gray-400 hover:text-white"><i class="fas fa-times text-xl"></i></button></div>
@@ -452,7 +415,6 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
   </div>
 </div>
 
-<!-- School ID Camera Modal -->
 <div id="school-id-modal" class="hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
   <div class="dark-card rounded-2xl p-6 w-full max-w-md border border-blue-600/30">
     <div class="flex items-center justify-between mb-5">
@@ -487,6 +449,7 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 <div id="notifications" class="fixed top-16 right-4 z-[70] space-y-2"></div>
 
 <script>
+
 const firebaseConfig = {
   apiKey: "AIzaSyBWKg4xLI1MNcXt9zfvhb-ZYnncj1NLTog",
   authDomain: "gym-sysstem.firebaseapp.com",
@@ -499,7 +462,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// LISTEN FOR RFID SCANS FROM ESP8266
 db.collection("rfid_scans")
 .onSnapshot(snapshot => {
 
@@ -546,7 +508,7 @@ const DB = {
         .limit(1).get();
       return !snap.empty;
     }catch(e){
-      // Composite index may be missing — fallback to client-side filter
+      
       console.warn('hasCheckedInToday index missing, using fallback:',e.message);
       try{
         const t=new Date().toDateString();
@@ -554,7 +516,7 @@ const DB = {
         return all.docs.some(d=>new Date(d.data().time).toDateString()===t);
       }catch(e2){
         console.error('hasCheckedInToday fallback failed:',e2);
-        return false; // If all else fails, allow check-in
+        return false; 
       }
     }
   }
@@ -564,16 +526,10 @@ let currentMember=null,selectedPlan=null,capturedPhotoDataURL=null;
 let cameraStream=null,facingMode='user',memberFilter='all';
 let deleteTargetId=null,editTargetId=null;
 
-// ══════════════════════════════════════════════
-//  🔗 REGISTER PAGE URL
-//  Set this to your hosted register.html URL
-//  e.g. "https://evovlefitness.netlify.app/register.html"
-// ══════════════════════════════════════════════
 const REGISTER_URL = window.location.origin !== 'null'
   ? window.location.origin + '/register.html'
   : 'https://evovlekiosk.pages.dev/register';
 
-// ── QR MODAL ──
 let qrInstance = null;
 function showQRModal(){
   document.getElementById('qr-modal').classList.remove('hidden');
@@ -602,7 +558,6 @@ function showSection(s){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ── STATS ──
 async function updateStats(){
   const members=await DB.getMembers();
   const today=await DB.getTodayAtt();
@@ -614,7 +569,6 @@ async function updateStats(){
   ['quick-walkin','quick-walkin-m'].forEach(id=>animateCounter(document.getElementById(id),walkinCount));
 }
 
-// ── RECENT CHECK-INS TICKER ──
 async function renderRecentCheckins(){
   const records=await DB.getRecentAtt(50);
   const list=document.getElementById('checkin-list');
@@ -624,13 +578,13 @@ async function renderRecentCheckins(){
   if(!records.length){
     if(empty)empty.style.display='flex';
     if(countEl)countEl.textContent='';
-    // Remove any old rows
+    
     Array.from(list.children).forEach(c=>{if(c.id!=='checkin-list-empty')c.remove();});
     return;
   }
   if(empty)empty.style.display='none';
   if(countEl)countEl.textContent=records.length+' today';
-  // Rebuild list
+  
   Array.from(list.children).forEach(c=>{if(c.id!=='checkin-list-empty')c.remove();});
   records.forEach(a=>{
     const time=new Date(a.time).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:true});
@@ -647,7 +601,6 @@ async function renderRecentCheckins(){
   });
 }
 
-// ── CHECK-IN ──
 function focusRFID(){document.getElementById('rfid-input').focus();}
 async function processRFID(){
   const input=document.getElementById('rfid-input');
@@ -659,7 +612,6 @@ async function processRFID(){
     const member=await DB.getMemberByRFID(tag);
     if(!member){showNotif('Tag not registered — register this member first','error');return;}
 
-    // ── CHECK: already checked in today? ──
     const alreadyIn=await DB.hasCheckedInToday(member.id);
     if(alreadyIn){
       currentMember=member;
@@ -676,7 +628,6 @@ async function processRFID(){
   }
 }
 
-// ── CHECK-IN MODAL ──
 function showMemberModal(member,daysLeft){
   const pw=document.getElementById('modal-photo-wrap'),iw=document.getElementById('modal-init-wrap');
   if(member.photo){document.getElementById('modal-photo').src=member.photo;pw.classList.remove('hidden');iw.style.display='none';}
@@ -714,7 +665,6 @@ function showMemberModal(member,daysLeft){
 }
 function closeModal(){document.getElementById('member-modal').classList.add('hidden');currentMember=null;}
 
-// ── ALREADY CHECKED IN TODAY ──
 function showAlreadyCheckedIn(member){
   const pw=document.getElementById('modal-photo-wrap'),iw=document.getElementById('modal-init-wrap');
   if(member.photo){document.getElementById('modal-photo').src=member.photo;pw.classList.remove('hidden');iw.style.display='none';}
@@ -744,7 +694,6 @@ async function renewMember(){
   closeModal();updateStats();
 }
 
-// ── REGISTRATION ──
 let isStudent=false;
 let schoolIdPhotoDataURL=null;
 let sidStream=null, sidFacingMode='environment';
@@ -849,7 +798,6 @@ function selectPlan(plan){
 }
 function resetPlanSelection(){selectedPlan=null;document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));document.getElementById('plan-details').classList.add('hidden');const b=document.getElementById('btn-to-step3');if(b)b.disabled=true;}
 
-// ── MEMBERS LIST ──
 function setMF(f){memberFilter=f;document.querySelectorAll('.tab-pill').forEach(b=>b.classList.remove('active'));document.getElementById('filter-'+f).classList.add('active');renderMembers();}
 function filterMembers(){renderMembers();}
 async function renderMembers(){
@@ -875,7 +823,6 @@ async function renderMembers(){
   }).join('');
 }
 
-// ── EDIT / DELETE ──
 function toggleEditExpiry(plan){document.getElementById('edit-expiry-row').classList.toggle('hidden',plan!=='monthly');if(plan==='monthly'&&!document.getElementById('edit-expiry').value){const d=new Date();d.setDate(d.getDate()+30);document.getElementById('edit-expiry').value=d.toISOString().slice(0,10);}}
 async function openEditModal(id){
   const members=await DB.getMembers();
@@ -909,7 +856,6 @@ async function confirmDelete(){
   closeDeleteModal();renderMembers();updateStats();
 }
 
-// ── LIVE CLOCK ──
 function startKioskClock(){
   function tick(){
     const now=new Date();
@@ -921,7 +867,6 @@ function startKioskClock(){
   tick();setInterval(tick,1000);
 }
 
-// ── IDLE AUTO-FOCUS ──
 let idleTimer=null;
 function resetIdleTimer(){
   clearTimeout(idleTimer);
@@ -948,7 +893,6 @@ function closeCamera(){stopCamera();document.getElementById('camera-modal').clas
 function removePhoto(){capturedPhotoDataURL=null;document.getElementById('photo-preview').src='';document.getElementById('photo-taken').classList.add('hidden');document.getElementById('photo-taken').classList.remove('flex');document.getElementById('photo-placeholder').classList.remove('hidden');}
 function resetPhotoCapture(){capturedPhotoDataURL=null;const p=document.getElementById('photo-preview');if(p)p.src='';document.getElementById('photo-taken')?.classList.add('hidden');document.getElementById('photo-taken')?.classList.remove('flex');document.getElementById('photo-placeholder')?.classList.remove('hidden');}
 
-// ── SCHOOL ID CAMERA ──
 async function openSchoolIdCamera(){
   schoolIdPhotoDataURL=null;
   document.getElementById('school-id-modal').classList.remove('hidden');
@@ -999,11 +943,9 @@ function removeSchoolId(){
   document.getElementById('school-id-placeholder').classList.remove('hidden');
 }
 
-// ── VALIDATION ──
 function vf(inputId,errId,validator,errMsg){const el=document.getElementById(inputId),err=document.getElementById(errId),ok=validator(el.value.trim());el.classList.toggle('valid',ok);el.classList.toggle('invalid',!ok);err.textContent=errMsg;err.classList.toggle('hidden',ok);}
 function markInv(inputId,errId,errMsg){const el=document.getElementById(inputId),err=document.getElementById(errId);el.classList.add('invalid');el.classList.remove('valid');err.textContent=errMsg;err.classList.remove('hidden');el.scrollIntoView({behavior:'smooth',block:'center'});el.focus();}
 
-// ── NOTIFICATIONS ──
 function showNotif(msg,type='info'){
   const c=document.getElementById('notifications'),d=document.createElement('div');
   const colors={success:'border-green-500 text-green-400 bg-green-500/10',error:'border-red-500 text-red-400 bg-red-500/10',warning:'border-yellow-500 text-yellow-400 bg-yellow-500/10',info:'border-blue-500 text-blue-400 bg-blue-500/10'};
@@ -1014,7 +956,6 @@ function showNotif(msg,type='info'){
   setTimeout(()=>{d.style.transition='all 0.3s';d.style.opacity='0';d.style.transform='translateX(100%)';setTimeout(()=>d.remove(),300);},3500);
 }
 
-// ── PARTICLES ──
 (function(){
   const canvas=document.getElementById('particles-canvas');
   if(!canvas)return;
@@ -1048,7 +989,6 @@ function showNotif(msg,type='info'){
   draw();
 })();
 
-// ── ANIMATED COUNTERS ──
 function animateCounter(el, target) {
   if (!el) return;
   const start = parseInt(el.textContent) || 0;
@@ -1064,15 +1004,13 @@ function animateCounter(el, target) {
 }
 </script>
 <script>
-// Start clock immediately — elements are already in the DOM
+
 startKioskClock();
 
 document.addEventListener('DOMContentLoaded',()=>{
   updateStats();renderRecentCheckins();generateRFID();resetIdleTimer();
   setTimeout(()=>{const inp=document.getElementById('rfid-input');if(inp)inp.focus();},300);
 
-  // RFID scanner auto-submit: scanners type fast then send Enter.
-  // Also handle scanners that don't send Enter by watching input length stability.
   const rfidInput=document.getElementById('rfid-input');
   if(rfidInput){
     let rfidTimer=null;
@@ -1080,7 +1018,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       clearTimeout(rfidTimer);
       const val=rfidInput.value.trim();
       if(!val)return;
-      // Auto-submit after 120ms of no new characters (scanner finished)
+      
       rfidTimer=setTimeout(()=>{
         if(rfidInput.value.trim())processRFID();
       },120);
@@ -1101,11 +1039,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   });
 
-  // ── ADD SYSTEM BLOCKING LISTENER FOR KIOSK ──
   const kioskBlockDoc = db.collection('system_control').doc('kiosk');
   kioskBlockDoc.onSnapshot(doc => {
     if (doc.exists && doc.data().blocked === true) {
-      // Disable the whole kiosk UI
+      
       document.body.style.opacity = '0.7';
       document.body.style.pointerEvents = 'none';
       const existingOverlay = document.getElementById('blocked-overlay');
@@ -1142,9 +1079,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 
 <script>
-  // ── ESP8266 RFID via Firebase Realtime Database ──
-  // ESP8266 writes scanned UID to /rfid_scan in Firebase
-  // This listener fires instantly whenever a card is tapped
 
   function setRFIDDot(on) {
     const dot = document.getElementById('rfid-dot');
