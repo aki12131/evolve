@@ -16,66 +16,46 @@
 html,body{background:var(--bg);color:#fff;min-height:100vh;overflow-x:hidden;}
 .gold-text{color:var(--gold);}
 .dark-card{background:rgba(14,14,18,0.97);border:1px solid rgba(212,168,83,0.18);}
-
-/* Ambient */
 #amb{position:fixed;inset:0;z-index:0;pointer-events:none;}
 #amb::before{content:'';position:absolute;inset:0;background:
   radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,168,83,0.08),transparent 60%),
   radial-gradient(ellipse 80% 60% at 20% 100%,rgba(212,168,83,0.05),transparent 55%);}
 .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(212,168,83,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,83,0.025) 1px,transparent 1px);background-size:50px 50px;}
-
-/* Header */
 .reg-header{background:rgba(6,6,8,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,168,83,0.12);position:sticky;top:0;z-index:30;}
-
-/* Inputs */
 .input-dark{background:rgba(18,18,22,0.95);border:1px solid rgba(212,168,83,0.22);color:white;transition:all 0.25s;font-family:'Rajdhani',sans-serif;font-weight:500;font-size:16px;width:100%;padding:13px 16px;border-radius:12px;}
 .input-dark:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,83,0.1);}
 .input-dark::placeholder{color:rgba(255,255,255,0.2);}
 .input-dark.valid{border-color:rgba(34,197,94,0.6);}
 .input-dark.invalid{border-color:rgba(239,68,68,0.6);}
 select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23888' viewBox='0 0 20 20'%3E%3Cpath d='M7 7l3 3 3-3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;}
-
-/* Button */
 .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;font-weight:700;transition:all 0.25s;font-family:'Oswald',sans-serif;letter-spacing:0.08em;text-transform:uppercase;border:none;cursor:pointer;width:100%;padding:15px;border-radius:14px;font-size:15px;position:relative;overflow:hidden;}
 .btn-gold:active{transform:scale(0.98);}
 .btn-gold:disabled{opacity:0.4;cursor:not-allowed;}
 .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);font-weight:600;transition:all 0.25s;font-family:'Rajdhani',sans-serif;cursor:pointer;padding:13px 20px;border-radius:12px;font-size:14px;}
 .btn-outline:active{background:rgba(255,255,255,0.05);}
-
-/* Steps */
 .step-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:all 0.35s;flex-shrink:0;}
 .step-dot.active{background:var(--gold);color:#000;box-shadow:0 0 16px rgba(212,168,83,0.4);}
 .step-dot.done{background:#16a34a;color:#fff;}
 .step-dot.pending{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.1);}
 .step-line{flex:1;height:2px;background:rgba(255,255,255,0.07);transition:background 0.4s;}
 .step-line.done{background:var(--gold);}
-
-/* Plan cards */
 .plan-card{background:rgba(14,14,18,0.97);border:2px solid transparent;border-radius:16px;padding:18px;cursor:pointer;transition:all 0.3s;text-align:center;}
 .plan-card:active{transform:scale(0.98);}
 .plan-card.selected{border-color:var(--gold);background:rgba(212,168,83,0.08);box-shadow:0 0 25px rgba(212,168,83,0.15);}
-
-/* Type cards */
 .type-card{background:rgba(14,14,18,0.97);border:2px solid transparent;border-radius:14px;padding:16px;cursor:pointer;transition:all 0.3s;text-align:center;}
 .type-card.selected-regular{border-color:var(--gold);background:rgba(212,168,83,0.08);}
 .type-card.selected-student{border-color:#3b82f6;background:rgba(59,130,246,0.08);}
-
-/* Photo */
 .photo-ring{width:100px;height:100px;border-radius:50%;background:rgba(20,20,26,0.9);border:2px dashed rgba(212,168,83,0.35);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;margin:0 auto;}
 .photo-ring:active{transform:scale(0.96);}
 .photo-ring.has-photo{border-style:solid;border-color:var(--gold);}
 .photo-preview-wrapper{position:relative;width:100px;height:100px;margin:0 auto;}
 .photo-preview-wrapper img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--gold);}
 .photo-remove-btn{position:absolute;top:-2px;right:-2px;width:24px;height:24px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-size:10px;cursor:pointer;border:2px solid var(--bg);}
-
-/* Camera */
 #video-feed{transform:scaleX(-1);object-fit:cover;border-radius:12px;width:100%;height:100%;}
 #capture-canvas{display:none;}
 .shutter-btn{width:70px;height:70px;border-radius:50%;border:3px solid var(--gold);background:transparent;position:relative;transition:all 0.2s;cursor:pointer;flex-shrink:0;}
 .shutter-btn::after{content:'';position:absolute;inset:7px;border-radius:50%;background:var(--gold);transition:all 0.2s;}
 .shutter-btn:active{transform:scale(0.92);}
-
-/* Animations */
 .fade-in{animation:fadeIn 0.45s cubic-bezier(0.16,1,0.3,1) both;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .slide-up{animation:slideUp 0.4s cubic-bezier(0.16,1,0.3,1) both;}
@@ -83,16 +63,10 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 .success-pop{animation:sPop 0.6s cubic-bezier(0.175,0.885,0.32,1.275) forwards;}
 @keyframes sPop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
 .field-err{color:#f87171;font-size:11px;margin-top:4px;font-family:'Rajdhani',sans-serif;font-weight:600;}
-
-/* Notif */
 .notif{animation:slideR 0.3s cubic-bezier(0.16,1,0.3,1);}
 @keyframes slideR{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
-
-/* Scrollbar */
 ::-webkit-scrollbar{width:3px;}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px;}
-
-/* Section transitions */
 .reg-section{display:none;}
 .reg-section.active{display:block;}
 </style>
@@ -101,7 +75,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 
 <div id="amb"><div class="grid-bg"></div></div>
 
-<!-- HEADER -->
 <header class="reg-header px-4 py-3 flex items-center gap-3">
   <div class="w-9 h-9 bg-gradient-to-br from-gray-800 to-black border border-yellow-600/40 rounded-lg flex items-center justify-center flex-shrink-0" style="box-shadow:0 0 12px rgba(212,168,83,0.15)">
     <span class="font-oswald font-bold text-sm leading-none"><span class="text-white">E</span><span class="gold-text">F</span></span>
@@ -112,10 +85,8 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </header>
 
-<!-- MAIN -->
 <main id="reg-main" class="relative z-10 px-4 py-6 max-w-lg mx-auto pb-10">
 
-  <!-- ── INTRO ── -->
   <div id="sec-intro" class="reg-section active fade-in">
     <div class="text-center py-8">
       <div class="w-20 h-20 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-gray-800 to-black border border-yellow-600/30 flex items-center justify-center" style="box-shadow:0 0 30px rgba(212,168,83,0.15)">
@@ -142,10 +113,8 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
   </div>
 
-  <!-- ── FORM ── -->
   <div id="sec-form" class="reg-section">
 
-    <!-- Progress -->
     <div class="dark-card rounded-2xl p-5 mb-5 slide-up">
       <div class="flex items-center gap-2 mb-2">
         <div class="step-dot active" id="step-dot-1">1</div>
@@ -157,11 +126,9 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="flex justify-between text-xs text-gray-500 px-0.5 font-semibold"><span>Personal Info</span><span>Membership</span><span>Confirm</span></div>
     </div>
 
-    <!-- STEP 1 -->
     <div id="reg-step-1" class="fade-in">
       <div class="dark-card rounded-2xl p-5 space-y-5">
 
-        <!-- Profile Photo -->
         <div class="flex flex-col items-center gap-3 pb-4 border-b border-white/6">
           <div id="photo-placeholder" class="flex flex-col items-center gap-3">
             <div class="photo-ring" onclick="openCamera()">
@@ -175,7 +142,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           </div>
         </div>
 
-        <!-- Fields -->
         <div class="space-y-4">
           <div>
             <label class="text-[11px] uppercase tracking-wider text-gray-400 mb-1.5 block font-bold">Full Name <span class="text-red-500">*</span></label>
@@ -206,7 +172,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           </div>
         </div>
 
-        <!-- Member Type -->
         <div class="space-y-3">
           <label class="text-[11px] uppercase tracking-wider text-gray-400 font-bold block">Member Type</label>
           <div class="grid grid-cols-2 gap-3">
@@ -223,7 +188,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           </div>
         </div>
 
-        <!-- School ID (student only) -->
         <div id="school-id-section" class="hidden">
           <div class="bg-blue-600/8 border border-blue-600/20 rounded-xl p-3 mb-3 flex items-start gap-2.5">
             <i class="fas fa-info-circle text-blue-400 mt-0.5 flex-shrink-0 text-sm"></i>
@@ -251,7 +215,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
     </div>
 
-    <!-- STEP 2 -->
     <div id="reg-step-2" class="hidden fade-in">
       <div class="dark-card rounded-2xl p-5 space-y-4">
         <div>
@@ -300,16 +263,13 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
     </div>
 
-    <!-- STEP 3 -->
     <div id="reg-step-3" class="hidden fade-in">
       <div class="dark-card rounded-2xl p-5">
         <h3 class="font-oswald text-lg uppercase tracking-wider text-white mb-4">Registration Summary</h3>
-        <!-- Avatar -->
         <div class="flex justify-center mb-4">
           <div id="sum-photo-wrap" class="hidden"><img id="sum-photo" src="" alt="" class="w-20 h-20 rounded-full object-cover border-2 border-yellow-600"></div>
           <div id="sum-init-wrap" class="w-20 h-20 rounded-full bg-gradient-to-b from-gray-700 to-gray-900 border-2 border-yellow-600 flex items-center justify-center"><span class="font-oswald text-3xl gold-text" id="sum-initial">?</span></div>
         </div>
-        <!-- Fields -->
         <div class="space-y-0 divide-y divide-white/6 text-sm">
           <div class="flex justify-between py-2.5"><span class="text-gray-400 font-semibold">Name</span><span class="font-semibold" id="sum-name">—</span></div>
           <div class="flex justify-between py-2.5"><span class="text-gray-400 font-semibold">Email</span><span class="truncate ml-4 text-right" id="sum-email">—</span></div>
@@ -322,7 +282,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <span class="text-gray-200 font-bold font-oswald uppercase tracking-wide">Amount Due</span>
           <span class="font-bold text-2xl gold-text font-oswald" id="sum-amount">—</span>
         </div>
-        <!-- RFID notice -->
         <div class="mt-3 bg-white/3 rounded-xl p-3 flex items-start gap-2.5">
           <i class="fas fa-wifi text-yellow-600/60 mt-0.5 flex-shrink-0 text-sm"></i>
           <p class="text-xs text-gray-500">Your RFID tag will be assigned at the counter when you first visit.</p>
@@ -334,9 +293,8 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
     </div>
 
-  </div><!-- /sec-form -->
+  </div>
 
-  <!-- ── SUCCESS ── -->
   <div id="sec-success" class="reg-section fade-in">
     <div class="text-center py-8">
       <div class="w-24 h-24 rounded-full bg-green-600/15 border-2 border-green-500 flex items-center justify-center mx-auto mb-6 success-pop">
@@ -359,7 +317,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 
 </main>
 
-<!-- ── CAMERA MODAL ── -->
 <div id="camera-modal" class="hidden fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
   <div class="dark-card rounded-2xl p-5 w-full max-w-sm border border-yellow-600/25">
     <div class="flex items-center justify-between mb-4"><h3 class="font-oswald text-lg gold-text uppercase tracking-wider">Profile Photo</h3><button onclick="closeCamera()" class="text-gray-400 text-xl"><i class="fas fa-times"></i></button></div>
@@ -386,7 +343,6 @@ select.input-dark{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<!-- ── SCHOOL ID CAMERA ── -->
 <div id="school-id-modal" class="hidden fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
   <div class="dark-card rounded-2xl p-5 w-full max-w-sm border border-blue-600/25">
     <div class="flex items-center justify-between mb-4"><div><h3 class="font-oswald text-lg text-blue-400 uppercase tracking-wider">School ID</h3><p class="text-xs text-gray-500 mt-0.5">Align ID within the box</p></div><button onclick="closeSchoolIdCamera()" class="text-gray-400 text-xl"><i class="fas fa-times"></i></button></div>
@@ -426,14 +382,11 @@ const firebaseConfig = {
   measurementId: "G-FJDHTJRHRQ"
 };
 
-
-// ── STATE ──
 let selectedPlan=null,capturedPhotoDataURL=null,isStudent=false,schoolIdPhotoDataURL=null;
 let camStream=null,camFacing='user',sidStream=null,sidFacing='environment';
 let currentStep=1;
 let firebaseReady=false;
 
-// Safe Firebase init
 try{
   if(firebaseConfig.apiKey!=='YOUR_API_KEY'){
     firebase.initializeApp(firebaseConfig);
@@ -451,14 +404,12 @@ const DB={
   async logAttendance(e){if(db)await db.collection('attendance').add({...e,time:new Date().toISOString()});}
 };
 
-// ── SECTIONS ──
 function showSec(id){
   document.querySelectorAll('.reg-section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ── STEPS ──
 function goToStep(n){
   if(n===1){
     showSec('sec-form');
@@ -511,7 +462,6 @@ function buildSummary(){
   else{spw.classList.add('hidden');siw.classList.remove('hidden');}
 }
 
-// ── PLAN SELECTION ──
 function selectPlan(plan){
   selectedPlan=plan;
   ['entry','monthly'].forEach(p=>{
@@ -526,24 +476,20 @@ function selectPlan(plan){
   document.getElementById('btn-to-step3').disabled=false;
 }
 
-// ── STUDENT ──
 function setStudentStatus(val){
   isStudent=val;
   document.getElementById('type-regular').className='type-card '+(val?'':'selected-regular');
   document.getElementById('type-student').className='type-card '+(val?'selected-student':'');
   document.getElementById('school-id-section').classList.toggle('hidden',!val);
-  // Update plan card prices based on member type
   document.getElementById('price-entry').textContent=val?'₱50':'₱70';
   document.getElementById('price-monthly').textContent=val?'₱600':'₱900';
   const notice=document.getElementById('plan-student-notice');
   if(notice)notice.textContent=val?'🎓 Student rates applied — verify your ID to unlock discounts':'Standard rates shown below';
 }
 
-// ── VALIDATION ──
 function vf(id,errId,test,msg){const el=document.getElementById(id);const v=el.value;const ok=test(v);el.classList.toggle('valid',ok&&v.length>0);el.classList.toggle('invalid',!ok&&v.length>0);const e=document.getElementById(errId);if(e){e.textContent=msg;e.classList.toggle('hidden',ok||v.length===0);}}
 function markInv(id,errId,msg){const el=document.getElementById(id);el.classList.add('invalid');const e=document.getElementById(errId);if(e){e.textContent=msg;e.classList.remove('hidden');}}
 
-// ── COMPLETE ──
 function generateRFID(){return 'R'+Date.now().toString(36).toUpperCase();}
 async function completeRegistration(){
   const btn=document.getElementById('btn-complete');
@@ -569,7 +515,6 @@ async function completeRegistration(){
       expiry,
       registeredVia:'qr-self-registration'
     });
-    // Show success
     document.getElementById('success-name-msg').textContent=name+' is now a member!';
     document.getElementById('suc-rfid').textContent=rfid;
     document.getElementById('suc-plan').textContent=selectedPlan==='entry'?'Pay Per Entry':'Monthly';
@@ -600,7 +545,6 @@ function resetAll(){
   showSec('sec-form');
 }
 
-// ── PROFILE CAMERA ──
 async function openCamera(){
   capturedPhotoDataURL=null;
   document.getElementById('camera-modal').classList.remove('hidden');
@@ -644,7 +588,6 @@ function closeCamera(){stopCamera();document.getElementById('camera-modal').clas
 function removePhoto(){capturedPhotoDataURL=null;document.getElementById('photo-preview').src='';document.getElementById('photo-taken').classList.add('hidden');document.getElementById('photo-taken').classList.remove('flex');document.getElementById('photo-placeholder').classList.remove('hidden');}
 function resetPhotoCapture(){capturedPhotoDataURL=null;const p=document.getElementById('photo-preview');if(p)p.src='';document.getElementById('photo-taken')?.classList.add('hidden');document.getElementById('photo-taken')?.classList.remove('flex');document.getElementById('photo-placeholder')?.classList.remove('hidden');}
 
-// ── SCHOOL ID CAMERA ──
 async function openSchoolIdCamera(){
   schoolIdPhotoDataURL=null;
   document.getElementById('school-id-modal').classList.remove('hidden');
@@ -694,7 +637,6 @@ function removeSchoolId(){
   document.getElementById('school-id-placeholder').classList.remove('hidden');
 }
 
-// ── NOTIFICATIONS ──
 function showNotif(msg,type='info'){
   const c=document.getElementById('notifications'),d=document.createElement('div');
   const colors={success:'border-green-500 text-green-400 bg-green-500/10',error:'border-red-500 text-red-400 bg-red-500/10',warning:'border-yellow-500 text-yellow-400 bg-yellow-500/10',info:'border-blue-500 text-blue-400 bg-blue-500/10'};
@@ -705,13 +647,11 @@ function showNotif(msg,type='info'){
   setTimeout(()=>{d.style.transition='all 0.3s';d.style.opacity='0';d.style.transform='translateX(110%)';setTimeout(()=>d.remove(),300);},3500);
 }
 
-// ── SYSTEM BLOCKING LISTENER FOR REGISTER ──
 document.addEventListener('DOMContentLoaded', () => {
   if (!db) return;
   const registerBlockDoc = db.collection('system_control').doc('register');
   registerBlockDoc.onSnapshot(doc => {
     if (doc.exists && doc.data().blocked === true) {
-      // Disable the registration UI
       document.body.style.opacity = '0.7';
       document.body.style.pointerEvents = 'none';
       const existingOverlay = document.getElementById('blocked-overlay');
