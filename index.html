@@ -20,7 +20,7 @@
 .font-oswald{font-family:'Oswald',sans-serif;}
 html,body{background:var(--bg);color:#fff;overflow-x:hidden;min-height:100vh;}
 
-/* ── AMBIENT BACKGROUND ── */
+/* Ambient background */
 #ambient-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 #ambient-bg::before{content:'';position:absolute;inset:0;background:
   radial-gradient(ellipse 80% 60% at 10% 90%,rgba(212,168,83,0.12) 0%,transparent 55%),
@@ -32,33 +32,33 @@ html,body{background:var(--bg);color:#fff;overflow-x:hidden;min-height:100vh;}
   background-size:72px 72px;animation:gridDrift 50s linear infinite;}
 @keyframes gridDrift{0%{transform:translate(0,0)}100%{transform:translate(72px,72px)}}
 
-/* ── PARTICLES ── */
+/* Particles canvas */
 #particles-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.8;}
 
-/* ── BASE ── */
+/* Base */
 .gold-text{color:var(--gold);}
 .dark-card{background:rgba(8,8,14,0.99);border:1px solid rgba(212,168,83,0.18);backdrop-filter:blur(24px);box-shadow:0 12px 50px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.04);}
 .fade-in{animation:fadeIn 0.6s cubic-bezier(0.16,1,0.3,1) both;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── NAV ── */
+/* Navigation */
 nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bottom:1px solid rgba(212,168,83,0.14);position:fixed;top:0;width:100%;z-index:40;box-shadow:0 2px 40px rgba(0,0,0,0.7);}
 .nav-btn{transition:all 0.22s;border:1px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.5);}
 .nav-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,168,83,0.09);}
 .nav-btn.active{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;border-color:transparent;font-weight:700;box-shadow:0 4px 20px rgba(212,168,83,0.45);}
 
-/* ── CLOCK — HUGE ── */
+/* Clock */
 .kiosk-clock{font-family:'Oswald',sans-serif;font-size:clamp(5rem,10vw,10rem);font-weight:200;letter-spacing:0.03em;line-height:1;color:#fff;text-shadow:0 0 80px rgba(212,168,83,0.4),0 2px 20px rgba(0,0,0,0.5);}
 .kiosk-date{font-size:clamp(0.85rem,1.4vw,1.15rem);letter-spacing:0.42em;color:rgba(212,168,83,0.75);text-transform:uppercase;margin-top:12px;font-weight:700;}
 
-/* ── STAT BUBBLES — LARGE ── */
+/* Stat bubbles */
 .stat-bubble{background:rgba(8,8,14,0.96);border:1px solid rgba(212,168,83,0.18);border-radius:22px;padding:24px 32px;text-align:center;transition:all 0.35s;position:relative;overflow:hidden;}
 .stat-bubble::before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(212,168,83,0.08),transparent 55%);pointer-events:none;}
 .stat-bubble::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,83,0.5),transparent);}
 .stat-bubble:hover{border-color:rgba(212,168,83,0.5);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(212,168,83,0.12);}
 .stat-num{font-family:'Oswald',sans-serif;line-height:1;transition:all 0.4s;}
 
-/* ── RFID RINGS — FULL SIZE ── */
+/* RFID rings */
 .rfid-ring-wrap{position:relative;display:flex;align-items:center;justify-content:center;}
 .rfid-outer{width:160px;height:160px;border-radius:50%;border:2.5px solid rgba(212,168,83,0.28);display:flex;align-items:center;justify-content:center;position:relative;animation:breathe 3s ease-in-out infinite;}
 @keyframes breathe{0%,100%{transform:scale(1);border-color:rgba(212,168,83,0.25);}50%{transform:scale(1.07);border-color:rgba(212,168,83,0.7);box-shadow:0 0 50px rgba(212,168,83,0.15);}}
@@ -69,24 +69,24 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 @keyframes ripple{0%{transform:scale(1);opacity:0.6;}100%{transform:scale(2.8);opacity:0;}}
 .rfid-inner{width:116px;height:116px;border-radius:50%;background:linear-gradient(145deg,rgba(212,168,83,0.12),rgba(212,168,83,0.04));border:2px solid rgba(212,168,83,0.38);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(212,168,83,0.12),inset 0 0 30px rgba(212,168,83,0.06);}
 
-/* ── CHECKIN CARD ── */
+/* Check-in card */
 .checkin-card{transition:all 0.35s cubic-bezier(0.16,1,0.3,1);border:1px solid rgba(212,168,83,0.2);cursor:pointer;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
 .checkin-card::before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(212,168,83,0.09) 0%,transparent 55%);opacity:0;transition:opacity 0.3s;pointer-events:none;}
 .checkin-card:hover::before{opacity:1;}
 .checkin-card:hover{border-color:rgba(212,168,83,0.65);box-shadow:0 0 80px rgba(212,168,83,0.22),0 16px 50px rgba(0,0,0,0.5);}
 .checkin-card:active{transform:scale(0.99);}
 
-/* ── SCAN LINE ── */
+/* Scan line */
 .scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:scanMove 2.5s ease-in-out infinite;opacity:0.55;}
 @keyframes scanMove{0%{top:0;opacity:0;}8%{opacity:0.9;}92%{opacity:0.9;}100%{top:100%;opacity:0;}}
 
-/* ── CORNER BRACKETS ── */
+/* Corner brackets */
 .corner-tl{position:absolute;top:18px;left:18px;width:30px;height:30px;border-top:2.5px solid rgba(212,168,83,0.6);border-left:2.5px solid rgba(212,168,83,0.6);}
 .corner-tr{position:absolute;top:18px;right:18px;width:30px;height:30px;border-top:2.5px solid rgba(212,168,83,0.6);border-right:2.5px solid rgba(212,168,83,0.6);}
 .corner-bl{position:absolute;bottom:18px;left:18px;width:30px;height:30px;border-bottom:2.5px solid rgba(212,168,83,0.6);border-left:2.5px solid rgba(212,168,83,0.6);}
 .corner-br{position:absolute;bottom:18px;right:18px;width:30px;height:30px;border-bottom:2.5px solid rgba(212,168,83,0.6);border-right:2.5px solid rgba(212,168,83,0.6);}
 
-/* ── LOGO ── */
+/* Logo */
 .logo-container{position:relative;display:inline-flex;align-items:center;justify-content:center;}
 .logo-halo{position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,83,0.22) 0%,transparent 65%);animation:haloBreath 3.5s ease-in-out infinite;}
 @keyframes haloBreath{0%,100%{transform:scale(0.87);opacity:0.5;}50%{transform:scale(1.13);opacity:1;}}
@@ -94,19 +94,19 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 @keyframes logoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
 .logo-hex::before{content:'';position:absolute;inset:1px;border-radius:26px;background:linear-gradient(145deg,rgba(212,168,83,0.09),transparent);}
 
-/* ── TITLE ── */
+/* Title */
 .title-welcome{font-size:clamp(0.85rem,1.4vw,1.1rem);letter-spacing:0.55em;color:rgba(255,255,255,0.3);text-transform:uppercase;font-weight:700;animation:titleSlideIn 0.9s 0.3s cubic-bezier(0.16,1,0.3,1) both;}
 .title-main{font-family:'Oswald',sans-serif;font-size:clamp(3rem,5.5vw,6rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;line-height:1;animation:titleSlideIn 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) both;background:linear-gradient(140deg,var(--gold2) 0%,var(--gold) 45%,#c49030 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 @keyframes titleSlideIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── INPUT — LARGE ── */
+/* Input */
 .input-dark{background:rgba(12,12,20,0.95);border:1.5px solid rgba(212,168,83,0.25);color:white;transition:all 0.3s;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1.1rem;}
 .input-dark:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,168,83,0.12),0 0 30px rgba(212,168,83,0.18);}
 .input-dark::placeholder{color:rgba(255,255,255,0.22);}
 .input-dark.valid{border-color:rgba(34,197,94,0.6);}
 .input-dark.invalid{border-color:rgba(239,68,68,0.6);}
 
-/* ── BUTTON — LARGE ── */
+/* Buttons */
 .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;font-weight:800;transition:all 0.3s;position:relative;overflow:hidden;font-family:'Oswald',sans-serif;letter-spacing:0.12em;}
 .btn-gold::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.3),transparent 60%);opacity:0;transition:opacity 0.3s;}
 .btn-gold:hover::before{opacity:1;}
@@ -114,23 +114,23 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 .btn-gold:active{transform:scale(0.98);}
 .btn-gold:disabled{opacity:0.35;cursor:not-allowed;transform:none;box-shadow:none;}
 
-/* ── TICKER ── */
+/* Ticker */
 .ticker-wrap{overflow:hidden;background:rgba(212,168,83,0.04);border-top:1px solid rgba(212,168,83,0.12);border-bottom:1px solid rgba(212,168,83,0.06);}
 .ticker-track{display:flex;animation:ticker 32s linear infinite;}
 .ticker-track:hover{animation-play-state:paused;}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:8px 28px;white-space:nowrap;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.05);}
 
-/* ── MODAL ── */
+/* Modals */
 .modal-enter{animation:modalPop 0.38s cubic-bezier(0.16,1,0.3,1);}
 @keyframes modalPop{from{opacity:0;transform:scale(0.91) translateY(14px)}to{opacity:1;transform:scale(1) translateY(0)}}
 .modal-member-photo{width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:0 auto 18px;display:block;box-shadow:0 0 30px rgba(212,168,83,0.3);}
 
-/* ── NOTIF ── */
+/* Notifications */
 .notif{animation:slideR 0.35s cubic-bezier(0.16,1,0.3,1);}
 @keyframes slideR{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
 
-/* ── MISC ── */
+/* Misc */
 .gold-glow{filter:drop-shadow(0 0 22px rgba(212,168,83,0.6));}
 .logo-glow{filter:drop-shadow(0 0 28px rgba(212,168,83,0.65));}
 ::-webkit-scrollbar{width:5px;}
@@ -168,17 +168,20 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
 .tab-pill.active{background:var(--gold);color:#000;border-color:var(--gold);}
 .att-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;}
 
-/* ── CHECK-IN SUCCESS BURST ── */
+/* Check-in success burst */
 @keyframes checkInBurst{0%{box-shadow:0 0 0 0 rgba(34,197,94,0.9);}100%{box-shadow:0 0 0 90px rgba(34,197,94,0);}}
 .checkin-burst{animation:checkInBurst 0.75s ease-out;}
 
-/* ── BLOCK OVERLAY ── */
+/* BLOCK OVERLAY */
 .block-overlay{
   position:fixed;
-  inset:0;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background:rgba(0,0,0,0.95);
   backdrop-filter:blur(16px);
-  z-index:10000;
+  z-index:100000;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -209,14 +212,14 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
   margin-bottom:12px;
 }
 .block-message{
-  color:var(--text-muted);
+  color:rgba(255,255,255,0.6);
   font-size:14px;
   margin-bottom:24px;
 }
 .block-footer{
   font-size:12px;
-  color:var(--text-dim);
-  border-top:1px solid var(--border);
+  color:rgba(255,255,255,0.3);
+  border-top:1px solid rgba(255,255,255,0.1);
   padding-top:20px;
   margin-top:20px;
 }
@@ -257,7 +260,7 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
   <!-- HOME -->
   <section id="home-section" class="w-full min-h-screen flex flex-col fade-in" style="position:relative;z-index:1;">
 
-    <!-- ── TOP BAR: Clock + Stats ── -->
+    <!-- TOP BAR: Clock + Stats -->
     <div class="w-full flex items-center justify-between px-8 sm:px-14 py-6 border-b border-white/5" style="background:rgba(4,4,10,0.5);">
       <!-- BIG Clock -->
       <div>
@@ -281,7 +284,7 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
       </div>
     </div>
 
-    <!-- ── MAIN AREA ── -->
+    <!-- MAIN AREA -->
     <div class="flex-1 flex items-center justify-center px-6 py-8 gap-10 xl:gap-16" style="position:relative;z-index:1;">
 
       <!-- LEFT COLUMN: Logo + Check-in + Register -->
@@ -302,14 +305,14 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
           <p class="text-sm text-gray-600 tracking-[0.3em] uppercase font-bold mt-2">Your Fitness Journey Starts Here</p>
         </div>
 
-        <!-- ── RFID CHECK-IN CARD ── -->
+        <!-- RFID CHECK-IN CARD -->
         <div class="w-full checkin-card rounded-3xl bg-[rgba(8,8,14,0.99)] px-10 py-10 relative overflow-hidden" onclick="focusRFID()">
           <div class="scan-line"></div>
           <div class="corner-tl"></div><div class="corner-tr"></div>
           <div class="corner-bl"></div><div class="corner-br"></div>
 
           <div class="flex flex-col items-center gap-8">
-            <!-- Full-size RFID rings — NO scale hack -->
+            <!-- Full-size RFID rings -->
             <div class="rfid-ring-wrap" style="padding:20px 0;">
               <div class="rfid-ring-1"></div>
               <div class="rfid-ring-2"></div>
@@ -400,7 +403,7 @@ nav.kiosk-nav{background:rgba(4,4,10,0.97);backdrop-filter:blur(30px);border-bot
     </div>
     <div class="dark-card rounded-2xl overflow-hidden">
       <div class="overflow-x-auto">
-        <table class="w-full text-sm"><thead><tr class="border-b border-white/10 text-xs uppercase tracking-wider text-gray-500"><th class="text-left py-4 px-5">Member</th><th class="text-left py-4 px-4 hidden sm:table-cell">RFID</th><th class="text-left py-4 px-4 hidden md:table-cell">Contact</th><th class="text-left py-4 px-4">Plan</th><th class="text-left py-4 px-4 hidden lg:table-cell">Expiry</th><th class="text-left py-4 px-4">Status</th><th class="py-4 px-4"></th>  </tr></thead>
+        <table class="w-full text-sm"><thead><tr class="border-b border-white/10 text-xs uppercase tracking-wider text-gray-500"><th class="text-left py-4 px-5">Member</th><th class="text-left py-4 px-4 hidden sm:table-cell">RFID</th><th class="text-left py-4 px-4 hidden md:table-cell">Contact</th><th class="text-left py-4 px-4">Plan</th><th class="text-left py-4 px-4 hidden lg:table-cell">Expiry</th><th class="text-left py-4 px-4">Status</th><th class="py-4 px-4"></th>   </tr></thead>
         <tbody id="members-tbody"></tbody>
         </table>
       </div>
@@ -1123,9 +1126,15 @@ function animateCounter(el, target) {
 let isBlocked = false;
 let blockUnsubscribe = null;
 function checkSystemBlocked() {
-  if (!db) return;
-  blockUnsubscribe = db.collection('system_control').doc('kiosk').onSnapshot(doc => {
+  if (!db) {
+    console.warn('Firestore not ready, will retry...');
+    setTimeout(checkSystemBlocked, 1000);
+    return;
+  }
+  const ref = db.collection('system_control').doc('kiosk');
+  blockUnsubscribe = ref.onSnapshot(doc => {
     const blocked = doc.exists && doc.data().blocked === true;
+    console.log('Kiosk block status changed:', blocked);
     if (blocked && !isBlocked) {
       isBlocked = true;
       showBlockOverlay();
@@ -1133,7 +1142,11 @@ function checkSystemBlocked() {
       isBlocked = false;
       hideBlockOverlay();
     }
-  }, err => console.error('Block listener error:', err));
+  }, err => {
+    console.error('Block listener error:', err);
+    // Show a notification that the monitor connection is lost?
+    showNotif('Error connecting to monitor system', 'error');
+  });
 }
 function showBlockOverlay() {
   let overlay = document.getElementById('kiosk-block-overlay');
@@ -1168,7 +1181,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   updateStats();renderRecentCheckins();generateRFID();resetIdleTimer();
   setTimeout(()=>{const inp=document.getElementById('rfid-input');if(inp)inp.focus();},300);
   // Start block listener
-  if (db) checkSystemBlocked();
+  checkSystemBlocked();
 
   // RFID scanner auto-submit: scanners type fast then send Enter.
   // Also handle scanners that don't send Enter by watching input length stability.
